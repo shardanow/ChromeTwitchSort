@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Twitch New First</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Twitch New First</h1>
+    <p>Настройки применяются сразу на открытых вкладках</p>
+  </div>
+  <form id="settings">
+    <label class="row">
+      <input type="checkbox" id="sortNewFirst">
+      <span>Поднимать «НОВОЕ» наверх</span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="blockHeaders">
+      <span>Заголовки-разделители блока «НОВОЕ»</span>
+    </label>
+    <p class="hint">Работает вместе с подъёмом «НОВОЕ»: зелёный заголовок «НОВОЕ» и разделитель «Все категории»</p>
+    <div class="field">
+      <label for="viewerThreshold">Остановка при зрителей меньше:</label>
+      <input type="number" id="viewerThreshold" min="0" step="10">
+    </div>
+    <p class="hint">0 — прокручивать до самого конца списка</p>
+    <label class="row">
+      <input type="checkbox" id="scrollAllButton">
+      <span>Показывать кнопку «Загрузить все»</span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="openInNewTab">
+      <span>Открывать карточки в новой вкладке</span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="scrollTopButton">
+      <span>Кнопка «наверх» в правом нижнем углу</span>
+    </label>
+    <div id="status"></div>
+  </form>
+  <script src="popup.js"></script>
+</body>
+</html>

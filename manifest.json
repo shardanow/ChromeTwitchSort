@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch New First",
+  "version": "1.0.0",
+  "description": "Сортирует категории Twitch: блок «НОВОЕ» сверху, загрузка всего списка по кнопке, открытие карточек в новой вкладке.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
