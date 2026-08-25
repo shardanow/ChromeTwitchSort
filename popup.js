@@ -44,3 +44,24 @@ els.viewerThreshold.addEventListener('change', () => {
   els.viewerThreshold.value = value;
   save('viewerThreshold', value);
 });
+
+function isDirectoryUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.hostname === 'www.twitch.tv' && (u.pathname === '/directory' || u.pathname === '/directory/all');
+  } catch {
+    return false;
+  }
+}
+
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  const tab = tabs && tabs[0];
+  const note = document.getElementById('page-note');
+  if (!note || !tab || !tab.url) return;
+  if (isDirectoryUrl(tab.url)) {
+    note.hidden = true;
+  } else {
+    note.textContent = 'Расширение работает только на twitch.tv/directory';
+    note.hidden = false;
+  }
+});

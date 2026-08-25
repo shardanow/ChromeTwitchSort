@@ -25,6 +25,15 @@ body {
   color: #89898d;
 }
 
+.header .note {
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: #2a2410;
+  color: #ffd75e;
+  font-size: 11px;
+}
+
 form {
   padding: 10px 16px 14px;
 }
